@@ -9,6 +9,8 @@ var app = express();
 var server = http.createServer(app);
 var io = socketIO(server);
 
+app.use(express.static(publicPath));
+
 app.get('/',(req, res) => {
     res.sendFile(publicPath + '/index.html')
 })
